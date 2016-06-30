@@ -1,10 +1,14 @@
 # Fitting psychometric functions using the Palamedes toolbox
 *Author: David Greatrex, PhD Candidate, University of Cambridge.  
-*Date: 01/03/2016 -- Language: R. -- Modifications:
+*Date: 01/03/2016 -- Language: Matlab. -- Modifications:
+
+This script uses functions taken from the Palamedes Matlab toolbox:
+* Prins, N. & Kingdom, F.A.A. Palamedes: Matlab routines for analyzing psychophysical data. www.palamedestoolbox.org
 
 ## Summary:
-This package fits sigmoid functions to psychoacoustic data collected during psychological
-experimentation at the University of Cambridge.
+This package provides an example of how to fit the cumulative distribution function to
+psychoacoustic data collected during psychological experimentation at the University of
+Cambridge.
 
 ## Data:
 The data is taken from an experiment investigating the effects of rhythmic expectation on
@@ -12,58 +16,33 @@ complex decision-making. This used the psychophysical method of constant stimuli
 the target stimulus was varied systematically around a detection threshold.
 
 ## Purpose:
-The purpose of these analytical scripts is to fit psychometric functions to each participants
-data, individually by each condtion of interest. Slope and threshold values are then extracted
-from each fit and compared across condition and group using pairwise t-tests.
+The purpose of the script is to fit the cumulative distribution function to each participant's 
+data, individually by each condtion of interest. Slope and threshold values are then extracted 
+from each fit and output to a table. Parametric bootstrapping is then applied to the 
+fitted function as means of computing standard error values for both slope and threshold as well 
+as computing goodness of fit statistics. These additions are found in the output table.
 
 ## Method:
-The process of fitting models to each participant’s data and then testing group differences using 
-null hypothesis significance testing on the estimated parameters, rather than fitting one model to 
-the entire dataset, has been termed the ‘summary statistics approach’ to computational modelling and 
-is a widely used procedure - see Daw (2011) for a thorough review. The approach is closely related 
-to hierarchical regression modelling in that it treats each parameter estimate as a random variable 
-(random effect) by drawing a participant from the population at random and then running the entire 
-experiment and analysis on them. In contrast, were only one model fit to the entire dataset, the 
-estimated parameters would be treated as fixed effects and as a result, all between participant 
-variability would be neglected (Daw, 2011, pp. 7-8).
-
-## Bootstrapping:
-To extract the most unbiased fit for each model, a bootstrapped distribution of model-fitting 
-parameters is generated for each psychometric function (as in Knoblauch and Maloney, 2012; 
-James et al., 2013; Piazza et al., 2013; Gold et al., 2015). This involves resampling the data with 
-replacement 10,000 times to produce 10,000 bootstrapped samples and fitting each bootstrapped sample 
-with the same model used on the original data. This results in a bootstrapped distribution of parameter 
-values B0 and B1 from which the average parameter values (mean(B0) and mean(B1)) are retained. Threshold
-and slope where then defined by:
-Threshold = -mean(B0)/mean(B1)
-Slope = mean(B1)
-where threshold represents the location of the probe tone corresponding to 50% of left responses (also 
-the mean of the underlying distribution function) and slope to the steepness of the psychometric 
-curve. Higher slopes represented greater discrimination of the average sequence location, whereas thresholds 
-smaller or larger than zero represented a left or rightward bias in the perceived location of the average
-relative to the probe tone.
+The psychometric data from each participant and condition were fitted with sigmoidal cumulative 
+distribution functions, each defined by three parameters: threshold, slope and lapse-rate as 
+implemented in Palamedes toolbox (Prins and Kingdom, 2009). This is the same method used by
+Rohenkohl et al, 2012 & Cravo et al, 2013. Guess rates were fixed at 0 (i.e., the participant 
+always pressed the same response key) across subjects and conditions, and the three parameters 
+were fit separately for each subject and condition.
+* http://www.palamedestoolbox.org/overview.html
+* http://www.palamedestoolbox.org/understandingfitting.html
 
 ## To run:
 1. Download the content of the folder locally on to your hardrive including the folder structure. 
-2. Open the r script 'main.R'. 
-3. Change the path on line 18 to represent the folder location in which you saved the downloaded content.
-4. Run 'main.R'. All plots will then be saved into the downloaded filestructure.
-Note - due to bootstrapping the script will take a long time to complete. ~25 minutes. You can check progress
-by looking at how many plots have been output into the plot folder. There are 24 participants in total.
+2. Open the Matlab script 'main.m'. 
+3. Change the path on line 7 to represent the folder location in which you saved the downloaded content.
+4. Run 'main.m'. All plots will then be saved into the downloaded filestructure plot folder.
+Note - due to bootstrapping the script will take a long time to complete. ~20 minutes. You can check progress
+by looking at how many plots have been output into the plot folder. There are 17 participants in total.
 
 ## References:
-*[Daw, N. (2011). Trial-by-trial data analysis using computational models. In. Delgado, M., Phelps, E., & Robbins, T., (Eds). Decision making, affect, and learning: Attention and Performace XX111. Oxford, Oxford University Press, 3-38.](http://www.cns.nyu.edu/~daw/d10.pdf)
+*[Prins, N. & Kingdom, F.A.A. Palamedes: Matlab routines for analyzing psychophysical data.](http://www.palamedestoolbox.org/index.html)
 
-*[Knoblauch, K. and Maloney, L. T. (2012). Modeling psychophysical data in R, volume
-32. Springer Science & Business Media.](http://www.springer.com/gp/book/9781461444749)
+*[Rohenkohl, G. Cravo, A. Wyart, V. and Nobre, A. (2012). Temporal Expectation Improves the Quality of Sensory Information. The Journal of Neuroscience, 32(24), 8424–8428.](https://www.jneurosci.org/content/32/24/8424.full)
 
-*[James, G., Witten, D., Hastie, T., and Tibshirani, R. (2013). An introduction to
-statistical learning, volume 112. Springer.](http://www-bcf.usc.edu/~gareth/ISL/ISLR%20First%20Printing.pdf)
-
-*[Piazza, E. A., Sweeny, T. D., Wessel, D., Silver, M. A., and Whitney, D. (2013). Humans
-use summary statistics to perceive auditory sequences. Psychological science,
-24(8):1389–1397.](http://pss.sagepub.com/content/24/8/1389.short)
-
-*[Gold, J. R., Nodal, F. R., Peters, F., King, A. J., and Bajo, V. M. (2015). Auditory
-gap-in-noise detection behavior in ferrets and humans. Behavioral neuroscience,
-129(4):473.](http://psycnet.apa.org/journals/bne/129/4/473/)
+*[Cravo, A. Rohenkohl, G. Wyart, V. and Nobre, A. (2013). Temporal Expectation Enhances Contrast Sensitivity by Phase Entrainment of Low-Frequency Oscillations in Visual Cortex. The Journal of Neuroscience, 33 (9), 4002–4010.](https://www.jneurosci.org/content/33/9/4002.full)
