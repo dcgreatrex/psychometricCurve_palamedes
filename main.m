@@ -1,3 +1,9 @@
+%-----------------------------------------------------------------------------------------------------
+% Author: David Greatrex, PhD Candidate, University of Cambridge.  
+% Date: 09/03/2016
+% Name: Fitting psychometric functions using the Palamedes Matlab toolbox
+%-----------------------------------------------------------------------------------------------------
+
 %--------------------------------------------
 % User input variables - define the path to the location of the downloaded folder
 %--------------------------------------------
