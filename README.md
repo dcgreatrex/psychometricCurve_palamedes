@@ -1,6 +1,6 @@
 # Fitting psychometric functions using the Palamedes toolbox
-*Author: David Greatrex, PhD Candidate, University of Cambridge.  
-*Date: 01/03/2016 -- Language: Matlab. -- Modifications:
+Author: David Greatrex, PhD Candidate, University of Cambridge.  
+Date: 01/03/2016 -- Language: Matlab. -- Modifications:
 
 This script uses functions taken from the Palamedes Matlab toolbox:
 * Prins, N. & Kingdom, F.A.A. Palamedes: Matlab routines for analyzing psychophysical data. www.palamedestoolbox.org
@@ -41,8 +41,8 @@ Note - due to bootstrapping the script will take a long time to complete. ~20 mi
 by looking at how many plots have been output into the plot folder. There are 17 participants in total.
 
 ## References:
-*[Prins, N. & Kingdom, F.A.A. Palamedes: Matlab routines for analyzing psychophysical data.](http://www.palamedestoolbox.org/index.html)
+* [Prins, N. & Kingdom, F.A.A. Palamedes: Matlab routines for analyzing psychophysical data.](http://www.palamedestoolbox.org/index.html)
 
-*[Rohenkohl, G. Cravo, A. Wyart, V. and Nobre, A. (2012). Temporal Expectation Improves the Quality of Sensory Information. The Journal of Neuroscience, 32(24), 8424–8428.](https://www.jneurosci.org/content/32/24/8424.full)
+* [Rohenkohl, G. Cravo, A. Wyart, V. and Nobre, A. (2012). Temporal Expectation Improves the Quality of Sensory Information. The Journal of Neuroscience, 32(24), 8424–8428.](https://www.jneurosci.org/content/32/24/8424.full)
 
-*[Cravo, A. Rohenkohl, G. Wyart, V. and Nobre, A. (2013). Temporal Expectation Enhances Contrast Sensitivity by Phase Entrainment of Low-Frequency Oscillations in Visual Cortex. The Journal of Neuroscience, 33 (9), 4002–4010.](https://www.jneurosci.org/content/33/9/4002.full)
+* [Cravo, A. Rohenkohl, G. Wyart, V. and Nobre, A. (2013). Temporal Expectation Enhances Contrast Sensitivity by Phase Entrainment of Low-Frequency Oscillations in Visual Cortex. The Journal of Neuroscience, 33 (9), 4002–4010.](https://www.jneurosci.org/content/33/9/4002.full)
