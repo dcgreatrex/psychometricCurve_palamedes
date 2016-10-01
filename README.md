@@ -1,6 +1,7 @@
 # Fitting psychometric functions using the Palamedes toolbox
 Author: David Greatrex, PhD Candidate, University of Cambridge.  
-Date: 01/03/2016 -- Language: Matlab. -- Modifications:
+Date: 01/03/2016 -- Language: Matlab.
+Modifications: 01/10/2016
 
 This script uses functions taken from the Palamedes Matlab toolbox:
 * Prins, N. & Kingdom, F.A.A. Palamedes: Matlab routines for analyzing psychophysical data. www.palamedestoolbox.org
