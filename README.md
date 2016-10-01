@@ -36,9 +36,9 @@ were fit separately for each subject and condition.
 1. Download the content of the folder locally on to your hardrive including the folder structure. 
 2. Open the Matlab script 'main.m'. 
 3. Change the path on line 7 to represent the folder location in which you saved the downloaded content.
-4. Run 'main.m'. All plots will then be saved into the downloaded filestructure plot folder.
-Note - due to bootstrapping the script will take a long time to complete. ~20 minutes. You can check progress
-by looking at how many plots have been output into the plot folder. There are 17 participants in total.
+4. If your data is stored in a different location the specify this on line XX. Note that the data must be stored in the same format found in the data folder contained within the downloaded package.
+4. Run 'main.m'. All plots will then be saved into the downloaded file structure plot folder.
+Note - due to bootstrapping the script will take a long time to complete. This will depend on how many iterations you request in the main script. You can check progress by looking at how many plots have been output into the plot folder. There are 20 demo participants in total.
 
 ## References:
 * [Prins, N. & Kingdom, F.A.A. Palamedes: Matlab routines for analyzing psychophysical data.](http://www.palamedestoolbox.org/index.html)
