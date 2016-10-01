@@ -12,9 +12,9 @@ clear all
 % number of participants in the dataset
 pNo = 20;   
 % path to the main downloaded psychometricCurve_palamedes folder
-mainPath = '/Users/dcg/Code/Data_and_Analysis/PhD/Experiments/4_accumulation/code/palamedes_curvefitting';
+mainPath = '.../palamedes_curvefitting';
 % path to the main data folder
-dataPath = '/Users/dcg/Code/Data_and_Analysis/PhD/Experiments/4_accumulation/data/data_for_R';
+dataPath = '.../palamedes_curvefitting/data';
 % binary indicator: simulate standard error statistics? (1 = Y, 0 = N) 
 sim_std_error = 0;
 % number of simulations to compute standard error statistic
